@@ -1,5 +1,5 @@
 // from https://loading.io/css/
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import "./loader.css";
 
 export function Loader() {

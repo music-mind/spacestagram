@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, Suspense  } from 'react';
+import React, { useState, useEffect, Suspense  } from 'react';
 import {Loader} from './loader'
 import {Card} from './card'
 import './App.css';
@@ -17,7 +17,7 @@ export interface Image {
   url: string;
 };
 
-export interface ImageList {
+export interface ImageListType {
   images: Image[];
 };
 
@@ -28,7 +28,7 @@ function App() {
     async function getImages() {
       try {
         // Get image urls from API
-        const res = await fetch('https://api.nasa.gov/planetary/apod' + '?' + new URLSearchParams({
+        const res = await fetch('https://api.nasa.gov/planetary/apod?' + new URLSearchParams({
           api_key: (process.env.REACT_APP_NASA_KEY as string),
           count: '5',
         }));
@@ -70,7 +70,7 @@ function App() {
   );
 }
 
-function ImageList(props : ImageList) {
+function ImageList(props : ImageListType) {
   const images = props.images;
   const cards = images.map((image) =>
     <Suspense key={image.title} fallback={<Loader />}>
