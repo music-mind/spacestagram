@@ -18,7 +18,7 @@ export function Card(props : CardImage) {
 
   useEffect(() => {
     // Check localStorage
-    if (window.localStorage.getItem('likedImages') === null) {
+    if (window.localStorage.getItem('likedImages')) {
       const arr = JSON.parse(window.localStorage.getItem('likedImages')  || '{}');
       const likedImages = new Set(arr);
       if (likedImages.has(image.url)) {
