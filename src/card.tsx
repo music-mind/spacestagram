@@ -27,7 +27,7 @@ export function Card(props : CardImage) {
         setLiked(false);
       }
     }
-  }, [liked])
+  }, [liked, image.url])
 
   const handleLike = () => {
     let arr = [];
