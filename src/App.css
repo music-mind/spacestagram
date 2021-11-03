@@ -1,6 +1,6 @@
 main {
   color: white;
-  height: 80vh;
+  height: 90vh;
   overflow:hidden;
 }
 
@@ -11,7 +11,7 @@ main {
 }
 
 .header {
-  min-height: 20vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
